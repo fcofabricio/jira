@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 """The root of JIRA package namespace."""
 from __future__ import unicode_literals
-from pbr.version import VersionInfo
 
-_v = VersionInfo('jira').semantic_version()
-__version__ = _v.release_string()
-version_info = _v.version_tuple()
+__version__ = '2.0.0'
+version_info = '(2, 0, 0, \'final\', 0)'
 
 from jira.client import Comment  # noqa: E402
 from jira.client import Issue  # noqa: E402
