@@ -88,7 +88,7 @@ from jira import __version__
 from jira.utils import CaseInsensitiveDict
 from jira.utils import json_loads
 from jira.utils import threaded_requests
-from pkg_resources import parse_version
+# from pkg_resources import parse_version
 
 from collections import OrderedDict
 
@@ -551,18 +551,19 @@ class JIRA(object):
 
     def _check_update_(self):
         """Check if the current version of the library is outdated."""
-        try:
-            data = requests.get("https://pypi.python.org/pypi/jira/json", timeout=2.001).json()
-
-            released_version = data['info']['version']
-            if parse_version(released_version) > parse_version(__version__):
-                warnings.warn(
-                    "You are running an outdated version of JIRA Python %s. Current version is %s. Do not file any bugs against older versions." % (
-                        __version__, released_version))
-        except requests.RequestException:
-            pass
-        except Exception as e:
-            logging.warning(e)
+        #try:
+        #    data = requests.get("https://pypi.python.org/pypi/jira/json", timeout=2.001).json()
+        #
+        #    released_version = data['info']['version']
+        #    if parse_version(released_version) > parse_version(__version__):
+        #        warnings.warn(
+        #            "You are running an outdated version of JIRA Python %s. Current version is %s. Do not file any bugs against older versions." % (
+        #                __version__, released_version))
+        #except requests.RequestException:
+        #    pass
+        #except Exception as e:
+        #    logging.warning(e)
+        pass
 
     def __del__(self):
         """Destructor for JIRA instance."""
